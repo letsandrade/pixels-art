@@ -38,8 +38,8 @@ for (let i = 0; i < 25; i += 1) {
 function paintPixel(event) {
    //event.target.classList.add('test')
    //let currColor = 
-   //let currPixel = event.target ;
-   event.target.style.backgroundColor = currColor; 
+   let currPixel = event.target;
+   currPixel.style.backgroundColor = currColor; 
 }
 // kudos: mislaine presidente, esdras, leo carvalho, fernando cabral
 
