@@ -33,6 +33,10 @@ body {
   border: 3px solid black;
 }
 
+.test {
+  background-color: aqua;
+}
+
 #color-black {
   background-color: black;
 

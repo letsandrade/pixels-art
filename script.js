@@ -17,20 +17,14 @@ function selectColor(event) {
         }
     }
     event.target.classList.add('selected');
-    let selected = '';
+    let selected = document.querySelector('.selected');
+    let currStyle = window.getComputedStyle(selected)//.backgroundColor;
+    let currColor = currStyle.getPropertyValue('background-color')
+    console.log(currStyle)
+    console.log(currColor)
 }
 
-
-function selectedColor() {
-    var elem = document.getElementById("test");
-    var theCSSprop = window.getComputedStyle(elem, null).getPropertyValue("background-color");
-    document.getElementById("demo").innerHTML = theCSSprop;
-  }
-
-
-//console.log(document.getElementsByTagName(div))
 const elementBody = document.getElementById('body')
-elementBody.appendChild(document.createElement('section'));
 const pixelBoard = document.getElementById('pixel-board')
 
 for (let i = 0; i < 25; i += 1) {
@@ -40,8 +34,12 @@ for (let i = 0; i < 25; i += 1) {
     pixelBoard.appendChild(elementDiv);
 }
 
+//pintar os quadrados clicados com a cor selecionada
 function paintPixel(event) {
-    
+   //event.target.classList.add('test')
+   //let currColor = 
+   //let currPixel = event.target ;
+   event.target.style.backgroundColor = currColor; 
 }
 // kudos: mislaine presidente, esdras, leo carvalho, fernando cabral
 
@@ -49,3 +47,10 @@ function paintPixel(event) {
    // document.getElementById("#pixel-board").appendChild(div)
 //}
 
+// ref: https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp
+/* function selectedColor() {
+    var elem = document.getElementById("test");
+    var theCSSprop = window.getComputedStyle(elem, null).getPropertyValue("background-color");
+    document.getElementById("demo").innerHTML = theCSSprop;
+  }
+ */
