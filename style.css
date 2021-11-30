@@ -30,7 +30,6 @@ body {
 }
 
 .selected {
-  border-radius: 50%;
   border: 1px solid black;
 }
 
@@ -38,19 +37,19 @@ body {
   background-color: aqua;
 }
 
-#color-black {
+.color-black {
   background-color: black;
 
 }
 
-#color-pink {
+.color-pink {
   background-color: deeppink;  
 }
 
-#color-purple {
+.color-purple {
   background-color: purple;  
 }
 
-#color-blue {
+.color-blue {
   background-color: blue;
 }

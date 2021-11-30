@@ -1,8 +1,11 @@
-const black = document.getElementById("color-black")
-const blue = document.getElementById("color-blue")
-const purple = document.getElementById("color-purple")
-const pink = document.getElementById("color-pink")
+// const black = document.getElementById("color-black")
+// const blue = document.getElementById("color-blue")
+// const purple = document.getElementById("color-purple")
+// const pink = document.getElementById("color-pink")
 const colorPalette = document.getElementById('color-palette').children
+const elementBody = document.getElementById('body')
+const pixelBoard = document.getElementById('pixel-board')
+const clearBoard = document.getElementById('clear-board')
 
 //tornar paleta de cores clicavel
 for (let counter = 0; counter < colorPalette.length; counter += 1) {
@@ -18,34 +21,55 @@ function selectColor(event) {
     }
     event.target.classList.add('selected');
     let selected = document.querySelector('.selected');
-    let currStyle = window.getComputedStyle(selected)//.backgroundColor;
-    let currColor = currStyle.getPropertyValue('background-color')
-    console.log(currStyle)
+    const currStyle = window.getComputedStyle(selected)//.backgroundColor;
+    const currColor = currStyle.getPropertyValue('background-color')
+    //console.log(currStyle)
     console.log(currColor)
 }
 
-const elementBody = document.getElementById('body')
-const pixelBoard = document.getElementById('pixel-board')
-
+//criar 'pixels' e tornar clicáveis
 for (let i = 0; i < 25; i += 1) {
     const elementDiv = document.createElement('div'); 
-    elementDiv.className = "pixel"
-    elementDiv.addEventListener('click', paintPixel);    
+    elementDiv.className = "pixel" 
     pixelBoard.appendChild(elementDiv);
+    //elementDiv.addEventListener('click', paintPixel);
 }
+//tornar clicaveis?
+const boardPronto = document.querySelectorAll('.pixel');
+for (let bp = 0; bp < boardPronto.length; bp += 1) {
+    boardPronto[bp].addEventListener('click', paintPixel)
+} 
 
 //pintar os quadrados clicados com a cor selecionada
 function paintPixel(event) {
-   //event.target.classList.add('test')
-   //let currColor = 
-   let currPixel = event.target;
-   currPixel.style.backgroundColor = currColor; 
+    //currColor
+    const selColor = document.querySelector('.selected').style.backgroundColor
+    //console.log(selColor)
+    const currPixel = event.target;
+    //console.log(currPixel)
+    currPixel.style.backgroundColor = selColor
+    //const pixelGrid = document.getElementsByClassName('pixel');
+    //event.target.classList.add('test')
+    //currColor = 
+    //let selColor = document.querySelector('.selected');
+    //let paintedPixel = elementDiv[currPixel]
+    //console.log(currPixel)
+    //event.target.style.backgroundColor = selColor.style.backgroundColor
 }
+
+clearBoard.addEventListener('click', limpaQuadro);
+
+function limpaQuadro(event) {
+    let paintedPixels = document.querySelectorAll('.pixel')
+    for (p = 0; p < paintedPixels.length; p +=1) {
+        paintedPixels[p].style.backgroundColor = 'white'
+    }
+
+}
+
+
 // kudos: mislaine presidente, esdras, leo carvalho, fernando cabral
 
-//function criaGrid() {
-   // document.getElementById("#pixel-board").appendChild(div)
-//}
 
 // ref: https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp
 /* function selectedColor() {
