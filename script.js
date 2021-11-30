@@ -20,14 +20,15 @@ function selectColor(event) {
         }
     }
     event.target.classList.add('selected');
-    let selected = document.querySelector('.selected');
-    const currStyle = window.getComputedStyle(selected)//.backgroundColor;
-    const currColor = currStyle.getPropertyValue('background-color')
+    /* let selected = document.querySelector('.selected');
+    let currStyle = window.getComputedStyle(selected)//.backgroundColor;
+    let currColor = currStyle.getPropertyValue('background-color') */
     //console.log(currStyle)
-    console.log(currColor)
+    //console.log(currColor)
 }
+//console.log(currColor)
 
-//criar 'pixels' e tornar clicáveis
+//criar 'pixels' + tornar clicáveis?
 for (let i = 0; i < 25; i += 1) {
     const elementDiv = document.createElement('div'); 
     elementDiv.className = "pixel" 
@@ -36,18 +37,23 @@ for (let i = 0; i < 25; i += 1) {
 }
 //tornar clicaveis?
 const boardPronto = document.querySelectorAll('.pixel');
+console.log(boardPronto)
 for (let bp = 0; bp < boardPronto.length; bp += 1) {
     boardPronto[bp].addEventListener('click', paintPixel)
 } 
 
+
 //pintar os quadrados clicados com a cor selecionada
 function paintPixel(event) {
-    //currColor
-    const selColor = document.querySelector('.selected').style.backgroundColor
-    //console.log(selColor)
+    let selected = document.querySelector('.selected');
+    let currStyle = window.getComputedStyle(selected)//.backgroundColor;
+    let currColor = currStyle.getPropertyValue('background-color')
+    //console.log(currColor)
+    const selColor = document.querySelector('.selected')//.style.backgroundColor
+    console.log(selColor)
     const currPixel = event.target;
     //console.log(currPixel)
-    currPixel.style.backgroundColor = selColor
+    currPixel.style.backgroundColor = currColor
     //const pixelGrid = document.getElementsByClassName('pixel');
     //event.target.classList.add('test')
     //currColor = 
@@ -67,8 +73,9 @@ function limpaQuadro(event) {
 
 }
 
+//OBS: ESTOU DEIXANDO MEU CODIGO "SUJO" COM AS COISAS QUE TENTEI ANTES DE FAZER FUNCIONAR PARA FINS EDUCACIONAIS.
 
-// kudos: mislaine presidente, esdras, leo carvalho, fernando cabral
+// kudos(as pessoas que me ajudaram com o requisito 4 e vão receber um cartão virtual e minha gratidão eterna): mislaine presidente, esdras, leo carvalho, fernando cabral
 
 
 // ref: https://www.w3schools.com/jsref/jsref_getcomputedstyle.asp
