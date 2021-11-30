@@ -12,7 +12,7 @@ for (let counter = 0; counter < colorPalette.length; counter += 1) {
     colorPalette[counter].addEventListener('click', selectColor);
 }
 
-//selecionar e capturar a cor
+//selecionar a cor
 function selectColor(event) {
     for (let c = 0; c < colorPalette.length; c += 1) {
         if (colorPalette[c].classList.contains('selected')) {
@@ -37,7 +37,7 @@ for (let i = 0; i < 25; i += 1) {
 }
 //tornar clicaveis?
 const boardPronto = document.querySelectorAll('.pixel');
-console.log(boardPronto)
+//console.log(boardPronto)
 for (let bp = 0; bp < boardPronto.length; bp += 1) {
     boardPronto[bp].addEventListener('click', paintPixel)
 } 
@@ -45,27 +45,27 @@ for (let bp = 0; bp < boardPronto.length; bp += 1) {
 
 //pintar os quadrados clicados com a cor selecionada
 function paintPixel(event) {
+    //criar obj da cor selecionada
     let selected = document.querySelector('.selected');
     let currStyle = window.getComputedStyle(selected)//.backgroundColor;
     let currColor = currStyle.getPropertyValue('background-color')
     //console.log(currColor)
-    const selColor = document.querySelector('.selected')//.style.backgroundColor
-    console.log(selColor)
+    //const selColor = document.querySelector('.selected')//.style.backgroundColor
+    //console.log(selColor)
     const currPixel = event.target;
-    //console.log(currPixel)
     currPixel.style.backgroundColor = currColor
     //const pixelGrid = document.getElementsByClassName('pixel');
     //event.target.classList.add('test')
-    //currColor = 
     //let selColor = document.querySelector('.selected');
     //let paintedPixel = elementDiv[currPixel]
     //console.log(currPixel)
     //event.target.style.backgroundColor = selColor.style.backgroundColor
 }
 
+//tornando botão limpar clicável
 clearBoard.addEventListener('click', limpaQuadro);
 
-function limpaQuadro(event) {
+function limpaQuadro() {
     let paintedPixels = document.querySelectorAll('.pixel')
     for (p = 0; p < paintedPixels.length; p +=1) {
         paintedPixels[p].style.backgroundColor = 'white'
