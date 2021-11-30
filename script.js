@@ -73,7 +73,7 @@ function limpaQuadro(event) {
 
 }
 
-//OBS: ESTOU DEIXANDO MEU CODIGO "SUJO" COM AS COISAS QUE TENTEI ANTES DE FAZER FUNCIONAR PARA FINS EDUCACIONAIS.
+//OBS: ESTOU DEIXANDO MEU CODIGO "SUJO" COMENTADAS AS COISAS QUE TENTEI ANTES DE FAZER FUNCIONAR PARA FINS EDUCACIONAIS.
 
 // kudos(as pessoas que me ajudaram com o requisito 4 e vão receber um cartão virtual e minha gratidão eterna): mislaine presidente, esdras, leo carvalho, fernando cabral
 
