@@ -75,6 +75,11 @@ O projeto propõe o desenvolvimento de uma aplicação simples em HTML, CSS e Ja
 
 Fique à vontade para explorar o código, modificá-lo e aprender com ele!
 
+## Live version
+
+Ao invés de clonar esse repositório e ver localmente, é possível vê-lo no link https://pixels-art-letsandrade.vercel.app/
+a versão em deploy atualmente é a que fiz à época, mas pretendo fazer alguns ajustes rápidos no futuro e fazer o deploy destes também.
+
 ## Agradecimentos
 
 Um grande agradecimento à Trybe por iniciar minha carreira de programação, aos ótimos instrutores que eles têm lá, e aos meus colegas de turma na época, que sempre ajudaram muito! E obrigado a todos que conferirem este projeto. Vocês são demais! 🤘
